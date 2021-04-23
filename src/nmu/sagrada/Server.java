@@ -13,7 +13,7 @@ public class Server {
         server = new ServerSocket(5000);
         System.out.printf("Sagrada sever started on : %s: 5000", InetAddress.getLocalHost().getHostAddress());
 
-        while (true){
+        while (true) {
             Socket client = server.accept();
             System.out.printf("\nConnection request received: %s", client.getInetAddress().getHostAddress());
             numPlayers++;

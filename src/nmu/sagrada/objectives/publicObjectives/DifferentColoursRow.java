@@ -37,7 +37,7 @@ public class DifferentColoursRow extends PublicObjective {
                             break;
                     }
                 }
-                colours[0] = 99;
+              //  colours[0] = 99;
             }
             if (hasNoRepeat(colours))
                 points += 6;
@@ -48,9 +48,12 @@ public class DifferentColoursRow extends PublicObjective {
 
 
     private boolean hasNoRepeat(int[] colours) {
-        for(int colour : colours)
-            if(colour > 1)
+        int sum = 0;
+        for (int colour : colours){
+            sum += colour;
+            if (colour > 1)
                 return false;
-        return true;
+        }
+        return sum == 5;
     }
 }

@@ -18,7 +18,7 @@ public class FiveSixPair extends PublicObjective {
                 Box curBox = windowCard.getWindowGrid().get(index);
                 index++;
                 if (!curBox.isEmpty()) {
-                    if(curBox.getDie().getValue() == 5 && j != 4)
+                    if(j != 4 && curBox.getDie().getValue() == 5)
                         if(windowCard.getWindowGrid().get(index).getDie().getValue() == 6)
                             points += 2;
                 }

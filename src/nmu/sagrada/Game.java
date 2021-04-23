@@ -42,8 +42,8 @@ public class Game {
             put("FIVE_SIX_PAIR", new FiveSixPair());
             put("JAGGED_DIFFERENT_COLOURS ", new JaggedDifferentColours());
             put("DIFFERENT_COLOURS_ROW", new DifferentColoursRow());
-            put("LIGHT_SHADES", new LightShades());
-            put("ONE_TWO", new OneTwo());
+            put("LIGHT_SHADES", new BlueYellowPattern());
+            put("ONE_TWO", new OneTwoPair());
             put("DIFFERENT_NUMBERS_ROW", new DifferentNumbersRow());
         }
     };

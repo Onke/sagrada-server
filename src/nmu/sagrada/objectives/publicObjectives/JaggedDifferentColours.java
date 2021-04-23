@@ -14,12 +14,9 @@ public class JaggedDifferentColours extends PublicObjective {
     public int calculatePoints(WindowCard windowCard) {
         int points = 0;
         int[] colours = {0, 0, 0, 0, 0};
-        int index = 0;
-        int min;
-        for (int i = 0; i < windowCard.LENGTH / 5; i++) {
-            for (int j = 0; j < windowCard.LENGTH / 4; j++) {
-                Box curBox = windowCard.getWindowGrid().get(index);
-                index++;
+        for (int i = 0; i < 11 ; i+= 5) {
+            for (int j = i; j < i + 9; j+=2) {
+                Box curBox = windowCard.getWindowGrid().get(j);
                 if (!curBox.isEmpty()) {
                     switch (curBox.getDie().getColour()) {
                         case RED:
@@ -40,12 +37,20 @@ public class JaggedDifferentColours extends PublicObjective {
                     }
                 }
             }
+            if (hasNoRepeat(colours))
+                points += 6;
+            colours = new int[]{0, 0, 0, 0, 0};
+        }
+       return points;
+    }
 
+    private boolean hasNoRepeat(int[] colours) {
+        int sum = 0;
+        for (int colour : colours){
+            sum += colour;
+            if (colour > 1)
+                return false;
         }
-        min = colours[0];
-        for (int i = 1; i < colours.length; i++) {
-            if (colours[i] < min) min = colours[i];
-        }
-        return min * 4;
+        return sum == 5;
     }
 }

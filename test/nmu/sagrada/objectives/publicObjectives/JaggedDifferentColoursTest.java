@@ -1,23 +1,23 @@
 package nmu.sagrada.objectives.publicObjectives;
 
 import nmu.sagrada.board.WindowCard;
+import org.junit.jupiter.api.Test;
 
-class DifferentColoursColumnTest {
+import static org.junit.jupiter.api.Assertions.*;
+
+class JaggedDifferentColoursTest {
     WindowCard window = new WindowCard("4025g006g203g404g100");
     Dice dice = new Dice();
-
-
-
-    @org.junit.jupiter.api.Test
+    @Test
     void calculatePoints() {
         window.getWindowGrid().get(0).placeDie(dice.blue.get(4));
         window.getWindowGrid().get(1).placeDie(dice.red.get(3));
         window.getWindowGrid().get(2).placeDie(dice.yellow.get(2));
         window.getWindowGrid().get(3).placeDie(dice.blue.get(5));
         window.getWindowGrid().get(4).placeDie(dice.green.get(6));
-        window.getWindowGrid().get(5).placeDie(dice.yellow.get(6));
+        window.getWindowGrid().get(5).placeDie(dice.green.get(6));
         window.getWindowGrid().get(6).placeDie(dice.green.get(3));
-        window.getWindowGrid().get(7).placeDie(dice.red.get(6));
+        window.getWindowGrid().get(7).placeDie(dice.blue.get(6));
         window.getWindowGrid().get(8).placeDie(dice.green.get(1));
         window.getWindowGrid().get(9).placeDie(dice.yellow.get(2));
         window.getWindowGrid().get(10).placeDie(dice.red.get(1));
@@ -31,9 +31,9 @@ class DifferentColoursColumnTest {
         window.getWindowGrid().get(18).placeDie(dice.yellow.get(2));
         window.getWindowGrid().get(19).placeDie(dice.red.get(4));
 
-        DifferentColoursColumn objective = new DifferentColoursColumn();
+        JaggedDifferentColours objective = new JaggedDifferentColours();
         int points = objective.calculatePoints(window);
         System.out.println(points);
-        assert points == 15;
+        assert points == 6;
     }
 }

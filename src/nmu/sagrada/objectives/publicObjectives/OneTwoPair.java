@@ -3,7 +3,7 @@ package nmu.sagrada.objectives.publicObjectives;
 import nmu.sagrada.board.Box;
 import nmu.sagrada.board.WindowCard;
 
-public class OneTwo extends PublicObjective{
+public class OneTwoPair extends PublicObjective{
     @Override
     public int getNumber() {
         return ONE_TWO;

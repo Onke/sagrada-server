@@ -5,7 +5,6 @@ import nmu.sagrada.board.WindowCard;
 
 public class DifferentColoursColumn extends PublicObjective {
 
-
     @Override
     public int getNumber() {
         return DIFFERENT_COLOURS_COLUMN;
@@ -37,7 +36,6 @@ public class DifferentColoursColumn extends PublicObjective {
                             break;
                     }
                 }
-                colours[0] = 99;
             }
             if (hasNoRepeat(colours))
                 points += 5;
@@ -47,9 +45,12 @@ public class DifferentColoursColumn extends PublicObjective {
     }
 
     private boolean hasNoRepeat(int[] colours) {
-        for (int colour : colours)
+        int sum = 0;
+        for (int colour : colours){
+            sum += colour;
             if (colour > 1)
                 return false;
-        return true;
+        }
+        return sum == 4;
     }
 }

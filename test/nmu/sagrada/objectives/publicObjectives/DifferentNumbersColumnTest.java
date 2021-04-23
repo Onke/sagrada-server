@@ -1,14 +1,14 @@
 package nmu.sagrada.objectives.publicObjectives;
 
 import nmu.sagrada.board.WindowCard;
+import org.junit.jupiter.api.Test;
 
-class DifferentColoursColumnTest {
+import static org.junit.jupiter.api.Assertions.*;
+
+class DifferentNumbersColumnTest {
     WindowCard window = new WindowCard("4025g006g203g404g100");
     Dice dice = new Dice();
-
-
-
-    @org.junit.jupiter.api.Test
+    @Test
     void calculatePoints() {
         window.getWindowGrid().get(0).placeDie(dice.blue.get(4));
         window.getWindowGrid().get(1).placeDie(dice.red.get(3));
@@ -31,9 +31,9 @@ class DifferentColoursColumnTest {
         window.getWindowGrid().get(18).placeDie(dice.yellow.get(2));
         window.getWindowGrid().get(19).placeDie(dice.red.get(4));
 
-        DifferentColoursColumn objective = new DifferentColoursColumn();
+        DifferentNumbersColumn objective = new DifferentNumbersColumn();
         int points = objective.calculatePoints(window);
         System.out.println(points);
-        assert points == 15;
+        assert points == 12;
     }
 }
