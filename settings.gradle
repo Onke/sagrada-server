@@ -1,0 +1,2 @@
+rootProject.name = 'sagrada-server'
+include 'game-core', 'protocol', 'server'
